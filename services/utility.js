@@ -19,4 +19,7 @@ module.exports = {
       throw error;
     }
   },
+  generateRandomString: (n) => {
+    return crypto.randomBytes(n).toString("hex");
+  },
 }
