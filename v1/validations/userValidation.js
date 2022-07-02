@@ -1,15 +1,12 @@
 const joi = require('joi');
 
 const validateSchema = async (inputs, schema) => {
-    console.log('i am up');
-    console.log(inputs);
     try {
         const { error, value } = schema.validate(inputs);
         console.log(error);
         if (error) throw error.details ? error.details[0].message.replace(/['"]+/g, '') : "";
         else return false;
     } catch (error) {
-        console.log(error + "in validate ");
         throw error;
     }
 };

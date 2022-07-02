@@ -19,27 +19,4 @@ module.exports = {
       throw error;
     }
   },
-  jwtVerify: async (token) => {
-    try {
-      return jwt.verify(token, process.env.jwtSecretKey);
-    } catch (error) {
-      throw error;
-    }
-  },
-  jwtRefreshSign: async (payload) => {
-    try {
-      return jwt.sign(payload, process.env.jwtRefreshSecretKey, {});
-    } catch (error) {
-      throw error;
-    }
-  },
-  generateRandomString: (n) => {
-    return crypto.randomBytes(n).toString("hex");
-  },
-  getJwtExpireTime: async () => {
-    return (
-      Math.floor(new Date().getTime() / 1000) +
-      parseInt(process.env.expiresIn.replace("s", ""))
-    );
-  },
 }

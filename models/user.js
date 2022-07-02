@@ -15,12 +15,8 @@ const userModel = new Schema({
         type: String,
         select: false
     },
-    jti:{
+    jti:{                                  // for handling number of sessions
         type: String
-    },
-    isVerified:{
-        type: Boolean,
-        default: true
     },
     isDeleted:{
         type: Boolean,
